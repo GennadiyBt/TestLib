@@ -21,22 +21,22 @@ namespace TestLib
         }
 
         //Проверка: является ли треугольник прямоугольным
-        public static bool IsRightAngled(double a, double b, double c)
+        public bool IsRightAngled()
         {
             // Проверка по теореме Пифагора: квадрат самой большой стороны должен быть равен сумме квадратов двух остальных сторон.
-            double maxSide = Math.Max(a, Math.Max(b, c));
+            double maxSide = Math.Max(sideA, Math.Max(sideB, sideC));
 
-            if (maxSide == a)
+            if (maxSide == sideA)
             {
-                return IsPythagoreanTheoremSatisfied(a, b, c);
+                return IsPythagoreanTheoremSatisfied(sideA, sideB, sideC);
             }
-            else if (maxSide == b)
+            else if (maxSide == sideB)
             {
-                return IsPythagoreanTheoremSatisfied(b, a, c);
+                return IsPythagoreanTheoremSatisfied(sideB, sideA, sideC);
             }
             else
             {
-                return IsPythagoreanTheoremSatisfied(c, a, b);
+                return IsPythagoreanTheoremSatisfied(sideC, sideB, sideA);
             }
         }
 
